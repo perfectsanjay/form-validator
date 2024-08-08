@@ -41,10 +41,25 @@ function ValidateForm(){
     
 }
 
+// store data
+function storeData(){
+    user = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        website: form.website.value,
+        password: form.password.value
+    }
+    console.log(user)
+}
+
 // function for processing form data
 function processFormData(e){
     e.preventDefault()
     ValidateForm()
+    if (isValid && passwordMatch){
+        storeData()
+    }
 }
 
 
